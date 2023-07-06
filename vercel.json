@@ -12,7 +12,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "laravel-movie-webpage.vercel.app",
+        "APP_URL": "https://bot.laravel-livewire.com",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -21,8 +21,8 @@
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "VIEW_COMPILED_PATH": "/tmp",
 
-        "CACHE_DRIVER": "file",
-        "LOG_CHANNEL": "stack",
-        "SESSION_DRIVER": "database"
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "array"
     }
 }
