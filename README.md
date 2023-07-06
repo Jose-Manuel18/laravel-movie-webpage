@@ -22,6 +22,7 @@ First, run these commands in this exact same order:
 ```bash
 composer update
 cp .env.example .env
+php artisan key:generate
 npm install      
 npm run build
 php artisan migrate
