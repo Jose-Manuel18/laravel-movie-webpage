@@ -1,16 +1,26 @@
 <div class="max-h-screen ">
     @if ($movie)
-        <div class="relative h-screen w-full">
-            <img src="{{ 'https://image.tmdb.org/t/p/original' . $movie['backdrop_path'] }}" alt="poster"
-                class="h-full w-full object-cover">
-            <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-t from-slate-900 h-3/4">
+        @mobile
+            <div class="relative h-screen w-full">
+                <img src="{{ 'https://image.tmdb.org/t/p/original' . $movie['poster_path'] }}" alt="poster"
+                    class="h-full w-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-t from-slate-900 h-full ">
+                </div>
+
             </div>
+        @elsemobile
+            <div class="relative h-screen w-full">
+                <img src="{{ 'https://image.tmdb.org/t/p/original' . $movie['backdrop_path'] }}" alt="poster"
+                    class="h-full w-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 w-full bg-gradient-to-t from-slate-900 h-3/4">
+                </div>
 
-        </div>
-        <div class="px-4 text-white bottom-0 left-0 right-0  h-1/2 absolute  w-full grid grid-cols-2 gap-2 grid-rows-2">
+            </div>
+        @endmobile
+        <div
+            class="flex flex-col px-4 text-white bottom-0 left-0 right-0  lg:h-1/2 absolute  w-full lg:grid lg:grid-cols-2 lg:gap-2 lg:grid-rows-2">
 
-
-            <div class="row-span-2">
+            <div class="lg:row-span-2 ">
                 <h1 class="pb-2  font-bold text-white text-4xl">{{ $movie['title'] }}</h1>
                 <div class="flex flex-row items-center">
 
@@ -42,8 +52,8 @@
                         @endif
                     </button>
                 </div>
-                <p>{{ $movie['release_date'] }}</p>
-                <div class="flex items-center justify-center mt-8">
+
+                <div class=" hidden lg:block text-center items-center justify-center mt-8 ">
                     <button wire:click="openModal"
                         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 hover:scale-105 rounded">
 
@@ -54,6 +64,17 @@
                     @livewire('modal', ['videoData' => $videoData])
 
                 </div>
+            </div>
+            <div class="block lg:hidden order-last text-center items-center justify-center mt-8 pb-2 ">
+                <button wire:click="openModal"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 hover:scale-105 rounded w-full max-w-sm ">
+
+                    Watch Trailer
+                </button>
+
+
+                @livewire('modal', ['videoData' => $videoData])
+
             </div>
             <div class="flex items-center justify-center p-2" wire:ignore>
                 @if ($movies)
