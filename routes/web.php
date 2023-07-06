@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Http\Livewire\Movies;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,10 +14,11 @@ use \App\Http\Livewire\Movies;
 */
 
 Route::get('/', function () {
-    $component = new Movies();
-    $component->mount();
-    return redirect('/movie/' . $component->firstMovieId);
+    $component = new \App\Http\Livewire\MovieDetail();
+    $firstMovieId = $component->getFirstMovieId(); // Assuming you added a method to get the first movie ID
+    return redirect('/movie/' . $firstMovieId);
 });
+
 
 Route::get('/movie/{id}', \App\Http\Livewire\MovieDetail::class)->name('movie-detail');
 Route::middleware([

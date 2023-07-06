@@ -21,7 +21,20 @@ class MovieDetail extends Component
     public $cast;
     public $videoData;
 
+public function getFirstMovieId()
+{
+    // Get list of popular movies
+    $moviesResponse = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . env('TMDB_API_KEY') . '&language=en-US&page=1');
+    if ($moviesResponse->successful() && isset($moviesResponse->json()['results'])) {
+        $this->movies = $moviesResponse->json()['results'];
+        $this->firstMovieId = $this->movies[0]['id'] ?? null;
+    } else {
+        $this->movies = null;
+        $this->firstMovieId = null;
+    }
 
+    return $this->firstMovieId;
+}
     public function mount($id)
     {
         // Get detailed movie info
