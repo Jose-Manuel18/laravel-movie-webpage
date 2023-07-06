@@ -18,13 +18,14 @@
             </div>
         @endmobile
         <div
-            class="flex flex-col px-4 text-white bottom-0 left-0 right-0  lg:h-1/2 absolute  w-full lg:grid lg:grid-cols-2 lg:gap-2 lg:grid-rows-2">
+            class="flex flex-col lg:px-4 text-white bottom-0 left-0 right-0  lg:h-1/2 absolute  w-full lg:grid lg:grid-cols-2 lg:gap-2 lg:grid-rows-2">
 
-            <div class="lg:row-span-2 ">
+            <div class="lg:row-span-2 px-4">
                 <h1 class="pb-2  font-bold text-white text-4xl">{{ $movie['title'] }}</h1>
                 <div class="flex flex-row items-center">
 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="mr-2 w-4 h-4">
                         <path fill-rule="evenodd" class="text-white"
                             d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
                             clip-rule="evenodd" />
@@ -53,9 +54,9 @@
                     </button>
                 </div>
 
-                <div class=" hidden lg:block text-center items-center justify-center mt-8 ">
+                <div class=" hidden lg:block text-center items-center justify-center mt-10  ">
                     <button wire:click="openModal"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 hover:scale-105 rounded">
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 hover:scale-105 rounded w-full max-w-sm ">
 
                         Watch Trailer
                     </button>
@@ -76,12 +77,12 @@
                 @livewire('modal', ['videoData' => $videoData])
 
             </div>
-            <div class="flex items-center justify-center p-2" wire:ignore>
+            <div class="flex items-center justify-center lg:p-2" wire:ignore>
                 @if ($movies)
                     <div id="movies-list" class="flex flex-nowrap overflow-x-auto">
                         @foreach ($movies as $movie)
                             <a href="{{ route('movie-detail', ['id' => $movie['id']]) }}">
-                                <div class="mr-4 flex flex-col items-center hover:scale-105 pt-2">
+                                <div class="lg:mr-4 mx-2 flex flex-col items-center hover:scale-105 pt-2">
                                     <img src="{{ 'https://image.tmdb.org/t/p/w500' . $movie['backdrop_path'] }}"
                                         alt="poster" class="max-h-[110px] max-w-[170px] object-contain rounded-md " />
                                     <h2 class="text-center">{{ $movie['title'] }}</h2>
@@ -101,7 +102,7 @@
                 @if ($cast)
                     <div class="flex flex-nowrap overflow-x-auto">
                         @foreach ($cast as $actor)
-                            <div class="mr-4 flex flex-col items-center hover:scale-105 pt-2 cursor-pointer">
+                            <div class="ml-2 lg:mr-4 flex flex-col items-center hover:scale-105 pt-2 cursor-pointer">
                                 <div class="w-16 h-16 rounded-full bg-cover bg-center"
                                     style="background-image: url({{ $actor['profile_path'] == null ? 'https://i.stack.imgur.com/l60Hf.png' : 'https://image.tmdb.org/t/p/w500' . $actor['profile_path'] }})">
                                 </div>
