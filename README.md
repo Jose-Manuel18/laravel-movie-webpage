@@ -7,19 +7,14 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Laravel Movie Web Page
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project is a movie website built with Laravel, utilizing Livewire and Jetstream for enhanced functionality and user interaction. It's a space where users can explore popular movies and watch their trailers.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel, a comprehensive PHP framework, forms the backbone of the project, facilitating robust and secure backend operations. Livewire helps in creating dynamic front-end components, reducing dependency on JavaScript. Jetstream adds valuable features like authentication, email verification, and session management, saving time on building these from scratch.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+The website has a responsive design, thanks to Tailwind CSS, ensuring an optimal user experience regardless of the device they're using. Tailwind's utility-first approach greatly aids in creating a visually appealing, custom, and mobile-friendly interface.
+
 
 ## Learning Laravel
 
