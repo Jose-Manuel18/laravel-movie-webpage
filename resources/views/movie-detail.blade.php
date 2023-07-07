@@ -62,7 +62,7 @@
                     </button>
 
 
-                    @livewire('modal', ['videoData' => $videoData])
+                    @livewire('modal', ['trailers' => $trailers])
 
                 </div>
             </div>

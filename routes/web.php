@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $component = new \App\Http\Livewire\MovieDetail();
-    $firstMovieId = $component->getFirstMovieId(); // Assuming you added a method to get the first movie ID
+    $firstMovieId = $component->getFirstMovieId(); 
     return redirect('/movie/' . $firstMovieId);
 });
 

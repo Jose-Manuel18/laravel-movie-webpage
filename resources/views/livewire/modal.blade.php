@@ -7,18 +7,23 @@
             <div class="sm:flex sm:items-start flex-grow">
                 <div class="text-center sm:text-left flex-grow">
                     <div class=" flex-grow relative">
-                        @if ($videoData && $videoData['type'] == 'Trailer')
-                            <div style="height: 0; padding-bottom: 56.25%;">
-                                <iframe class="absolute top-0 left-0 w-full h-full"
-                                    src="{{ $show ? 'https://www.youtube.com/embed/' . $videoData['key'] : '' }}"
-                                    frameborder="0"
-                                    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-                            </div>
+                        @if ($trailers)
+                            @foreach ($trailers as $trailer)
+                                <div style="height: 0; padding-bottom: 56.25%;">
+
+                                    <div style="height: 0; padding-bottom: 56.25%;">
+                                        <iframe class="absolute top-0 left-0 w-full h-full"
+                                            src="{{ 'https://www.youtube.com/embed/' . $trailer['key'] }}"
+                                            frameborder="0"
+                                            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+
+                                </div>
+                            @endforeach
                         @else
                             <p class="text-sm text-center items-center flex justify-center leading-5 text-gray-500">No
-                                trailer
-                                available.</p>
+                                trailer available.</p>
                         @endif
                     </div>
                 </div>

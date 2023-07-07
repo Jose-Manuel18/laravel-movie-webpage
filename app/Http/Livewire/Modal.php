@@ -8,6 +8,7 @@ class Modal extends Component
 {
     public $show = false;
     public $videoData;
+    public $trailers=[];
 
     protected $listeners = ['openModal' => 'open'];
 
