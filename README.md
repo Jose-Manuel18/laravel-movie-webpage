@@ -32,6 +32,6 @@ php artisan serve
 And in order to see the movies you'll need to add your TMDB_API_KEY in .env file
 
 ## 🍿 Showcase
-| Deskop  | Mobile |
+| Commission  | Calculator |
 |---           |---            |
 |<img width="1512" alt="Screenshot 2023-07-06 at 1 53 49 PM" src="https://github.com/Jose-Manuel18/laravel-movie-webpage/assets/103284630/7228936a-722d-4dff-82f3-56e4e4d483cc">|<img width="346" alt="Screenshot 2023-07-06 at 1 54 31 PM" src="https://github.com/Jose-Manuel18/laravel-movie-webpage/assets/103284630/76ce4e47-11f7-4bcb-abd1-660a64c6f657">
