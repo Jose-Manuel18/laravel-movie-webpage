@@ -44,7 +44,7 @@
                             {{ Str::substr($movie['overview'], 0, 150) }}...
                         @endif
                     </p>
-                    <button wire:click="$toggle('showFullOverview')"
+                    <button  wire:click="$toggle('showFullOverview')"
                         class="hover:text-blue-400 text-white font-bold text-sm">
                         @if ($showFullOverview)
                             Read Less
@@ -77,7 +77,7 @@
                 @livewire('modal', ['videoData' => $videoData])
 
             </div>
-            <div class="flex items-center justify-center lg:p-2" wire:ignore>
+            <div class="flex items-center justify-center lg:p-2">
                 @if ($movies)
                     <div id="movies-list" class="flex flex-nowrap overflow-x-auto">
                         @foreach ($movies as $movie)

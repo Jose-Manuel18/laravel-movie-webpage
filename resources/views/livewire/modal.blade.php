@@ -14,10 +14,10 @@
                                     <div style="height: 0; padding-bottom: 56.25%;">
                                         <iframe class="absolute top-0 left-0 w-full h-full"
                                             src="{{ 'https://www.youtube.com/embed/' . $trailer['key'] }}"
-                                            frameborder="0"
                                             allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
                                     </div>
+
 
                                 </div>
                             @endforeach

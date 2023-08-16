@@ -69,17 +69,9 @@ public function getFirstMovieId()
                     break; 
                 }
             }
+            dd($this->trailers);
 
         }
-
-
-
-
-
-
-
-
-        
 
     }
 
